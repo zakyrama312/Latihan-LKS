@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Latihan</title>
+</head>
+<body>
+    <div class="landing-page">
+        <div class="page-content">
+            <h1 id="text" style="color: white"></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore necessitatibus alias voluptates ex, magnam voluptatibus tempora repudiandae inventore reiciendis debitis pariatur cumque, velit voluptas ad. A eos facilis illo rerum!</p>
+            <a href="#">Get Started</a>
+        </div>
+    </div>
+
+
+    <div class="wisata">
+        <img src="images/1.jpg" alt="danawarih" id="myimg">
+
+        <!-- modal -->
+        <div id="mymodal" class="modal">
+            <!-- keluar -->
+            <span class="close">&times;</span>
+            <!-- gambar -->
+            <img class="modal-content" id="img1">
+            <!-- caption -->
+            <div id="caption"></div>
+        </div>
+    </div>
+
+    <script>
+     var i = 0, text;
+     text = "Full landing page";
+
+    function typing(){
+        if (i<text.length) {
+                
+            document.getElementById("text").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing,50);
+        }
+    }
+    typing();
+    </script>
+
+    <script>
+    var modal = document.getElementById('mymodal');
+
+    // mengambil gambar
+    var img = document.getElementById("myimg");
+    var modalimg = document.getElementById("img1");
+    var cation = document.getElementById("caption");
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalimg.src = this.src;
+        modalimg.style.width = "1200px";
+        modalimg.style.height = "500px";
+        modalimg.style.marginLeft = "25%";
+        cation.innerHTML = this.alt;
+    }
+
+    // tombol keluar
+    var span = document.getElementsByClassName("close")[0];
+
+    // keluar
+    span.onclick = function(){
+        modal.style.display = "none";
+
+    }
+    </script>
+</body>
+</html>
