@@ -1,0 +1,2 @@
+# Latihan-LKS
+cuma latihan
